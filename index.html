@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>رحلاتي حول العالم</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: auto; }
+        .header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        .header h1 { font-size: 48px; margin-bottom: 10px; }
+        .header p { font-size: 18px; opacity: 0.9; }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .stat-number { font-size: 36px; font-weight: bold; color: #667eea; }
+        
+        .trip-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        .trip-card:hover { transform: translateY(-5px); }
+        .trip-card h2 { color: #2c3e50; margin-bottom: 15px; }
+        .trip-card p { color: #555; margin: 8px 0; line-height: 1.6; }
+        .trip-card .emoji { font-size: 24px; }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .btn:hover { background: #5a67d8; }
+        
+        .hidden { display: none; }
+        .details { margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>🌍 رحلاتي</h1>
+            <p>توثيق لكل مغامرة حول العالم</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="tripCount">2</div>
+                <div>رحلة</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2</div>
+                <div>دولة</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="totalCost">6,700</div>
+                <div>ريال إجمالي</div>
+            </div>
+        </div>
+
+        <div class="trip-card" id="trip1">
+            <h2><span class="emoji">🇹🇷</span> إسطنبول، تركيا</h2>
+            <p>📅 التاريخ: 15 - 22 مارس 2026</p>
+            <p>💰 التكلفة: <span class="price">2,500</span> ريال</p>
+            <p>⭐ التقييم: 9/10</p>
+            <button class="btn" onclick="toggleDetails('details1')">عرض التفاصيل</button>
+            <div id="details1" class="details hidden">
+                <p>🕌 زيارة الأياصوفيا والمسجد الأزرق</p>
+                <p>🛍️ التجول في البازار الكبير</p>
+                <p>🚢 جولة في البوسفور</p>
+            </div>
+        </div>
+
+        <div class="trip-card" id="trip2">
+            <h2><span class="emoji">🇫🇷</span> باريس، فرنسا</h2>
+            <p>📅 التاريخ: 10 - 18 يناير 2026</p>
+            <p>💰 التكلفة: <span class="price">4,200</span> ريال</p>
+            <p>⭐ التقييم: 10/10</p>
+            <button class="btn" onclick="toggleDetails('details2')">عرض التفاصيل</button>
+            <div id="details2" class="details hidden">
+                <p>🗼 صعود برج إيفل</p>
+                <p>🎨 زيارة متحف اللوفر</p>
+                <p>🥐 تناول الكرواسان في الشانزليزيه</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+            } else {
+                details.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
